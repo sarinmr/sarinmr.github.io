@@ -81,35 +81,66 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);letter-spacing:-.03em;margin:.4rem 0 2.2
 footer{text-align:center;font-family:var(--mono);font-size:.72rem;color:var(--dm);padding:3rem 1rem}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
 .rv.on{opacity:1;transform:none}
+/* intro: incident story */
+#boot{--ac:#ff5a64;position:fixed;inset:0;z-index:200;background:#05070c;display:flex;align-items:center;justify-content:center;transition:opacity .8s}
+#boot.ok{--ac:var(--cy)}
+#boot.go{opacity:0;pointer-events:none}
+#boot::before{content:"";position:absolute;inset:0;background:radial-gradient(620px 380px at 50% 50%,color-mix(in srgb,var(--ac) 13%,transparent),transparent 70%)}
+#boot .ib{position:relative;width:min(560px,90vw);background:rgba(14,19,32,.85);border:1px solid var(--line);border-radius:12px;font-family:var(--mono);font-size:.78rem;box-shadow:0 20px 60px rgba(0,0,0,.5);transition:opacity .5s,transform .5s;animation:lin .5s}
+#boot .ib.hide{opacity:0;transform:scale(.97);pointer-events:none}
+#boot .ih{display:flex;align-items:center;gap:.7rem;padding:.8rem 1rem;border-bottom:1px solid var(--line);color:var(--tx)}
+#boot .st{width:9px;height:9px;border-radius:50%;background:var(--ac);box-shadow:0 0 12px var(--ac);animation:p 1s infinite}
+#boot .ih em{margin-left:auto;font-style:normal;color:var(--ac);border:1px solid var(--ac);padding:.05rem .55rem;border-radius:4px;font-size:.66rem}
+#boot svg{display:block;width:100%;height:64px;border-bottom:1px solid var(--line)}
+#sp{fill:none;stroke:var(--ac);stroke-width:1.6;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+#il{padding:.9rem 1rem;min-height:178px;line-height:1.85;color:var(--mu)}
+.ln{white-space:pre-wrap;animation:lin .25s}
+@keyframes lin{from{opacity:0;transform:translateY(6px)}}
+#boot .c{color:var(--dm)}#boot .e,#boot .d{color:#ff5a64}#boot .w{color:#f5a623}#boot .a{color:var(--cy)}
+#boot .nm{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity .4s;pointer-events:none}
+#boot .nm.on{opacity:1}
+#boot .nt{font-size:clamp(2.2rem,8vw,5rem);font-weight:700;letter-spacing:-.04em;line-height:1.1;display:flex;align-items:center}
+#nt{background:linear-gradient(90deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent}
+#boot .nt .cur{margin-left:.15em;height:.8em;width:.08em;min-width:5px}
+#boot .ns{margin-top:.8rem;font-family:var(--mono);font-size:clamp(.62rem,1.6vw,.82rem);letter-spacing:.22em;text-transform:uppercase;color:var(--mu);opacity:0;transition:opacity .6s}
+#boot .ns.on{opacity:1}
+#boot button{position:absolute;right:1.4rem;bottom:1.2rem;background:none;border:1px solid var(--line);border-radius:6px;color:var(--dm);font:.72rem var(--mono);padding:.35rem .8rem;cursor:pointer}
+#boot button:hover{color:var(--cy);border-color:var(--cy)}
+.hi{opacity:0;transform:translateY(26px);filter:blur(6px)}
+body.ready .hi{animation:hin .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--d,0)*.13s)}
+@keyframes hin{to{opacity:1;transform:none;filter:blur(0)}}
+@media(prefers-reduced-motion:reduce){.hi{opacity:1;transform:none;filter:none}}
 @media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.wide{grid-column:auto}.stats{grid-template-columns:1fr 1fr}.menu{display:block}.links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:#0a0e18;padding:1rem 1.5rem;border-bottom:1px solid var(--line)}.links.open{display:flex}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
+<noscript><style>.hi{opacity:1!important;transform:none!important;filter:none!important}#boot{display:none}</style></noscript>
 </head>
 <body>
+<div id="boot"><div class="ib" id="ib"><div class="ih"><span class="st"></span><b id="sl">INCIDENT #502 · prod-db-01</b><em id="sv">SEV-1</em></div><svg viewBox="0 0 300 64" preserveAspectRatio="none" aria-hidden="true"><polyline id="sp" points=""/></svg><div id="il"></div></div><div class="nm" id="nm"><div class="nt"><span id="nt"></span><i class="cur"></i></div><div class="ns" id="ns">software engineer · product support</div></div><button id="sk" aria-label="Skip intro">skip &rsaquo;</button></div>
 <canvas id="net" aria-hidden="true"></canvas>
 <nav><div class="wrap">
-<a class="logo" href="#top">2mailsarin<i>@</i>gmail.com<i>:~$</i></a>
+<a class="logo" href="#top">sarin<i>.</i>M R<i>:~$</i></a>
 <button class="menu" id="mb" aria-label="Menu">menu</button>
 <div class="links" id="ln"><a href="#about">/about</a><a href="#stack">/stack</a><a href="#experience">/experience</a><a href="#projects">/projects</a><a href="#contact">/contact</a></div>
 </div></nav>
 
 <header class="hero" id="top"><div class="wrap">
 <div>
-<div class="tag"><span class="dot"></span>ONLINE · KOCHI, IN · UTC+5:30</div>
-<h1>Software Engineer<br><span class="g">Product Support.</span></h1>
-<p class="lead">I debug production systems for enterprise SaaS. Root cause analysis, backend fixes and client-critical incidents across UK, EU and Middle East time zones.</p>
-<div class="btns"><a class="btn p" href="#contact">./contact --me</a><a class="btn" href="https://github.com/sarinmr" target="_blank" rel="noopener">github →</a><a class="btn" href="https://www.linkedin.com/in/sarin-ramachandran-5b7431267/" target="_blank" rel="noopener">linkedin →</a></div>
+<div class="tag hi" style="--d:0"><span class="dot"></span>ONLINE · KOCHI, IN · UTC+5:30</div>
+<h1 class="hi" style="--d:1">Software Engineer<br><span class="g">Product Support.</span></h1>
+<p class="lead hi" style="--d:2">I debug production systems for enterprise SaaS. Root cause analysis, backend fixes and client-critical incidents across UK, EU and Middle East time zones.</p>
+<div class="btns hi" style="--d:3"><a class="btn p" href="#contact">./contact --me</a><a class="btn" href="https://github.com/sarinmr" target="_blank" rel="noopener">github →</a><a class="btn" href="https://www.linkedin.com/in/sarin-ramachandran-5b7431267/" target="_blank" rel="noopener">linkedin →</a></div>
 </div>
-<div class="term" role="img" aria-label="Terminal summary of Sarin's profile">
+<div class="term hi" style="--d:4" role="img" aria-label="Terminal summary of Sarin's profile">
 <div class="bar"><b></b><b></b><b></b><span style="margin-left:.6rem">sarin@maxwell — zsh</span></div>
 <pre id="tp"></pre>
 </div>
 </div></header>
 
 <div class="wrap"><div class="stats rv">
-<div><strong>4<em>+</em></strong><span>Years in production</span></div>
-<div><strong>3</strong><span>Regions supported</span></div>
-<div><strong>2</strong><span>Promotions</span></div>
+<div><strong><b data-n="4">4</b><em>+</em></strong><span>Years in production</span></div>
+<div><strong><b data-n="3">3</b></strong><span>Regions supported</span></div>
+<div><strong><b data-n="2">2</b></strong><span>Promotions</span></div>
 <div><strong>CEO</strong><span>Award of Excellence</span></div>
 </div></div>
 
@@ -175,8 +206,42 @@ var lines=[
 ['<span class="c">$</span> <span class="w">uptime</span>'],
 ['4+ yrs in production, all systems <span class="c">nominal</span><span class="cur"></span>']];
 var tp=document.getElementById('tp');
+function startTerm(){
 if(rm){tp.innerHTML=lines.map(function(l){return l[0]}).join('\n')}
 else{var i=0,out='';(function step(){if(i>=lines.length)return;out+=(i?'\n':'')+lines[i][0];tp.innerHTML=out;i++;setTimeout(step,i%2?450:700)})()}
+}
+/* opening sequence: a production incident, found and fixed */
+var boot=document.getElementById('boot'),seen=false;
+try{seen=sessionStorage.getItem('boot')==='1'}catch(e){}
+function reveal(){if(document.body.classList.contains('ready'))return;document.body.classList.add('ready');startTerm()}
+if(rm||seen){boot.remove();reveal()}
+else{
+try{sessionStorage.setItem('boot','1')}catch(e){}
+document.body.style.overflow='hidden';
+var $=function(i){return document.getElementById(i)},ib=$('ib'),il=$('il'),sv=$('sv'),sl=$('sl'),sp=$('sp'),nt=$('nt'),ns=$('ns'),nm=$('nm'),fin=false,TM=[],iv,ph=1,cur=10,pts=[];
+for(var k=0;k<60;k++)pts.push(10);
+function at(ms,f){TM.push(setTimeout(f,ms))}
+function ln(h){var d=document.createElement('div');d.className='ln';d.innerHTML=h;il.appendChild(d)}
+function draw(){var nz=ph==1?7:1.5;cur+=((ph==1?54:9)-cur)*(ph==1?.12:.3)+(Math.random()-.5)*nz*2;cur=Math.max(4,Math.min(58,cur));pts.push(cur);pts.shift();sp.setAttribute('points',pts.map(function(v,i){return (i*5.1).toFixed(1)+','+(62-v).toFixed(1)}).join(' '))}
+function finish(){if(fin)return;fin=true;TM.forEach(clearTimeout);clearInterval(iv);document.body.style.overflow='';boot.classList.add('go');reveal();setTimeout(function(){boot.remove()},900)}
+iv=setInterval(draw,60);
+at(500,function(){ln('<span class="c">02:14:07</span> <span class="e">ERROR</span> rds connection timeout')});
+at(850,function(){ln('<span class="c">02:14:09</span> <span class="w">WARN </span> audit_log mismatch · tenant 47')});
+at(1200,function(){ln('<span class="c">02:14:12</span> <span class="e">ALERT</span> client escalation · UK')});
+at(1650,function(){ln('<span class="w">$</span> sarin --trace --root-cause')});
+at(2000,function(){ln('<span class="c">  ↳ connection pool exhausted after deploy</span>')});
+at(2300,function(){ln('<span class="d">- pool_size = 5</span>')});
+at(2550,function(){ln('<span class="a">+ pool_size = 50; retry = 3</span>')});
+at(2950,function(){boot.classList.add('ok');ph=2;sv.textContent='RESOLVED';sl.textContent='INCIDENT #502 · prod-db-01';ln('<span class="a">✔ status: resolved · latency nominal</span>')});
+at(3650,function(){ib.classList.add('hide');nm.classList.add('on');var s='Sarin M R',i=0;(function t(){nt.textContent=s.slice(0,++i);if(i<s.length)TM.push(setTimeout(t,75));else ns.classList.add('on')})()});
+at(5000,finish);
+$('sk').onclick=finish;
+addEventListener('keydown',function(e){if(e.key==='Escape'||e.key==='Enter')finish()});
+setTimeout(finish,9000);
+}
+/* stat count-up */
+var so=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;so.unobserve(x.target);x.target.querySelectorAll('b[data-n]').forEach(function(b){var t=+b.dataset.n;if(rm)return;var s0=null;(function f(ts){if(!s0)s0=ts;var q=Math.min((ts-s0)/1200,1);b.textContent=Math.round(t*(1-Math.pow(1-q,3)));if(q<1)requestAnimationFrame(f)})(performance.now())})})},{threshold:.1});
+document.querySelectorAll('.stats').forEach(function(el){so.observe(el)});
 /* network canvas */
 var cv=document.getElementById('net'),cx=cv.getContext('2d'),W,H,pts=[],mx=-999,my=-999;
 function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;var n=Math.min(70,Math.floor(W*H/22000));pts=[];for(var k=0;k<n;k++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25})}
