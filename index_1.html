@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarin M R — Software Engineer, Product Support</title>
+<meta name="description" content="Software Engineer (Product Support) at Maxwell GeoSystems. Production debugging, root cause analysis and backend engineering with Python, Django, PHP, SQL and AWS.">
+<meta property="og:title" content="Sarin M R — Software Engineer, Product Support">
+<meta property="og:description" content="Production debugging, RCA and backend engineering for enterprise SaaS across the UK, EU and Middle East.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2307090f'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='%2300f0d0' font-family='monospace'>&gt;_</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090f;--panel:rgba(14,19,32,.72);--line:rgba(120,160,255,.14);--cy:#00f0d0;--vi:#8b7bff;--tx:#e6ebf5;--mu:#8a96ad;--dm:#55607a;--sans:'Space Grotesk',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
+#net{position:fixed;inset:0;z-index:-1;opacity:.55}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(900px 500px at 85% -10%,rgba(139,123,255,.16),transparent 60%),radial-gradient(700px 500px at 0% 40%,rgba(0,240,208,.08),transparent 60%)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(7,9,15,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:var(--mono);font-size:.9rem;color:var(--cy)}
+.logo i{font-style:normal;color:var(--dm)}
+.links{display:flex;gap:1.6rem;font-family:var(--mono);font-size:.78rem;color:var(--mu)}
+.links a:hover{color:var(--cy)}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--tx);font-family:var(--mono);padding:.3rem .7rem;border-radius:6px;cursor:pointer}
+.hero{min-height:100vh;display:flex;align-items:center;padding:6.5rem 0 3rem}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.tag{display:inline-flex;gap:.5rem;align-items:center;font-family:var(--mono);font-size:.72rem;color:var(--cy);border:1px solid rgba(0,240,208,.3);background:rgba(0,240,208,.07);padding:.3rem .8rem;border-radius:99px;margin-bottom:1.4rem}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--cy);box-shadow:0 0 10px var(--cy);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35}}
+h1{font-size:clamp(2.4rem,5.4vw,4.3rem);line-height:1.04;letter-spacing:-.04em;font-weight:700}
+h1 .g{background:linear-gradient(90deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mu);font-size:1.08rem;max-width:520px;margin:1.3rem 0 2rem}
+.btns{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn{font-family:var(--mono);font-size:.82rem;padding:.8rem 1.4rem;border-radius:8px;border:1px solid var(--line);transition:.2s}
+.btn.p{background:var(--cy);color:#04100e;border-color:var(--cy);font-weight:500}
+.btn.p:hover{box-shadow:0 0 28px rgba(0,240,208,.45)}
+.btn:not(.p):hover{border-color:var(--cy);color:var(--cy)}
+.term{background:var(--panel);border:1px solid var(--line);border-radius:12px;backdrop-filter:blur(10px);font-family:var(--mono);font-size:.78rem;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.term .bar{display:flex;gap:6px;align-items:center;padding:.7rem 1rem;border-bottom:1px solid var(--line);color:var(--dm);font-size:.7rem}
+.term .bar b{width:9px;height:9px;border-radius:50%;background:#2a3350}
+.term pre{padding:1.1rem 1.2rem;white-space:pre-wrap;line-height:1.85;color:var(--mu);min-height:290px}
+.term .c{color:var(--cy)}.term .v{color:var(--vi)}.term .w{color:var(--tx)}
+.cur{display:inline-block;width:8px;height:1em;background:var(--cy);vertical-align:-2px;animation:b 1s steps(1) infinite}
+@keyframes b{50%{opacity:0}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:-1rem}
+.stats div{background:#0a0e18;padding:1.4rem 1.2rem}
+.stats strong{display:block;font-size:2rem;letter-spacing:-.04em}
+.stats strong em{font-style:normal;color:var(--cy)}
+.stats span{font-family:var(--mono);font-size:.68rem;color:var(--dm);text-transform:uppercase;letter-spacing:.08em}
+section{padding:6rem 0 1rem}
+.lab{font-family:var(--mono);font-size:.74rem;color:var(--cy);letter-spacing:.14em;text-transform:uppercase}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem);letter-spacing:-.03em;margin:.4rem 0 2.2rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.4rem;transition:.25s;backdrop-filter:blur(8px)}
+.card:hover{border-color:rgba(0,240,208,.4);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,240,208,.07)}
+.card h3{font-family:var(--mono);font-size:.74rem;color:var(--cy);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.9rem;font-weight:400}
+.card p{color:var(--mu);font-size:.92rem}
+.pills{display:flex;flex-wrap:wrap;gap:.45rem}
+.pills span{font-family:var(--mono);font-size:.73rem;padding:.28rem .65rem;border-radius:6px;background:rgba(120,160,255,.07);border:1px solid var(--line);color:var(--tx)}
+.wide{grid-column:span 2}
+.tl{border-left:1px solid var(--line);margin-left:6px}
+.job{position:relative;padding:0 0 2.4rem 2rem}
+.job::before{content:"";position:absolute;left:-6px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--cy);box-shadow:0 0 10px rgba(0,240,208,.6)}
+.job.old::before{border-color:var(--dm);box-shadow:none}
+.job h3{font-size:1.15rem;letter-spacing:-.01em}
+.job .m{font-family:var(--mono);font-size:.74rem;color:var(--vi);margin:.2rem 0 .8rem}
+.job ul{list-style:none;color:var(--mu);font-size:.93rem}
+.job li{padding-left:1.2rem;position:relative;margin:.35rem 0}
+.job li::before{content:"›";position:absolute;left:0;color:var(--cy)}
+.proj{display:flex;flex-direction:column;gap:.8rem}
+.st{font-family:var(--mono);font-size:.68rem;color:var(--cy)}
+.cta{text-align:center;padding:3.5rem 1.5rem;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,rgba(139,123,255,.08),rgba(0,240,208,.04));margin-top:1rem}
+.cta h2{margin-bottom:.6rem}
+.cta p{color:var(--mu);max-width:480px;margin:0 auto 1.8rem}
+footer{text-align:center;font-family:var(--mono);font-size:.72rem;color:var(--dm);padding:3rem 1rem}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.rv.on{opacity:1;transform:none}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.wide{grid-column:auto}.stats{grid-template-columns:1fr 1fr}.menu{display:block}.links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:#0a0e18;padding:1rem 1.5rem;border-bottom:1px solid var(--line)}.links.open{display:flex}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="net" aria-hidden="true"></canvas>
+<nav><div class="wrap">
+<a class="logo" href="#top">sarin<i>@</i>maxwell<i>:~$</i></a>
+<button class="menu" id="mb" aria-label="Menu">menu</button>
+<div class="links" id="ln"><a href="#about">/about</a><a href="#stack">/stack</a><a href="#experience">/experience</a><a href="#projects">/projects</a><a href="#contact">/contact</a></div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<div>
+<div class="tag"><span class="dot"></span>ONLINE · KOCHI, IN · UTC+5:30</div>
+<h1>Software Engineer<br><span class="g">Product Support.</span></h1>
+<p class="lead">I debug production systems for enterprise SaaS. Root cause analysis, backend fixes and client-critical incidents across UK, EU and Middle East time zones.</p>
+<div class="btns"><a class="btn p" href="#contact">./contact --me</a><a class="btn" href="https://github.com/sarinmr" target="_blank" rel="noopener">github →</a><a class="btn" href="https://www.linkedin.com/in/sarin-ramachandran-5b7431267/" target="_blank" rel="noopener">linkedin →</a></div>
+</div>
+<div class="term" role="img" aria-label="Terminal summary of Sarin's profile">
+<div class="bar"><b></b><b></b><b></b><span style="margin-left:.6rem">sarin@maxwell — zsh</span></div>
+<pre id="tp"></pre>
+</div>
+</div></header>
+
+<div class="wrap"><div class="stats rv">
+<div><strong>4<em>+</em></strong><span>Years in production</span></div>
+<div><strong>3</strong><span>Regions supported</span></div>
+<div><strong>2</strong><span>Promotions</span></div>
+<div><strong>CEO</strong><span>Award of Excellence</span></div>
+</div></div>
+
+<section id="about"><div class="wrap rv">
+<div class="lab">// 01 about</div><h2>Where support meets engineering</h2>
+<div class="grid">
+<div class="card wide"><h3>Profile</h3><p>I started on the support desk and grew into engineering at Maxwell GeoSystems, a UK-headquartered geotechnical SaaS company. Today I fix bugs in the product itself, resolve complex client issues and write the root cause analyses that stop them recurring. I work comfortably from PHP and Python code down to Linux, SQL and AWS in the same day.</p></div>
+<div class="card"><h3>Focus</h3><p>Production debugging · RCA · Backend · Cloud infrastructure · Client-facing engineering</p></div>
+</div></div></section>
+
+<section id="stack"><div class="wrap rv">
+<div class="lab">// 02 stack</div><h2>Tools I work with</h2>
+<div class="grid">
+<div class="card"><h3>Languages</h3><div class="pills"><span>Python</span><span>PHP</span><span>JavaScript</span><span>SQL</span><span>Bash</span></div></div>
+<div class="card"><h3>Frameworks &amp; APIs</h3><div class="pills"><span>Django</span><span>REST APIs</span></div></div>
+<div class="card"><h3>Data</h3><div class="pills"><span>MySQL</span><span>MongoDB</span><span>AWS RDS</span></div></div>
+<div class="card"><h3>Infra &amp; Ops</h3><div class="pills"><span>Linux</span><span>AWS EC2</span><span>AWS RDS</span><span>Jira</span></div></div>
+<div class="card wide"><h3>Problem domains</h3><div class="pills"><span>Audit log discrepancies</span><span>RDS connection issues</span><span>Multi-tenant data anomalies</span><span>Production repro &amp; triage</span><span>Knowledge-base engineering</span></div></div>
+</div></div></section>
+
+<section id="experience"><div class="wrap rv">
+<div class="lab">// 03 experience</div><h2>Career log</h2>
+<div class="tl">
+<div class="job"><h3>Software Engineer — Product Support</h3><div class="m">Maxwell GeoSystems · Jul 2026 → present</div>
+<ul><li>Bug fixing and development across product portals</li><li>Client issue resolution and root cause analysis for enterprise customers</li></ul></div>
+<div class="job old"><h3>Support Engineer</h3><div class="m">Maxwell GeoSystems · Jul 2024 → Jun 2026</div>
+<ul><li>Resolved complex bugs: PHP audit log discrepancies, RDS connection issues, multi-tenant data anomalies</li><li>Handled database queries and Linux administration within daily enterprise support</li><li>Raised detailed bug reports with Jira and reproduced production issues in-environment</li><li>Wrote documentation and knowledge-base articles that reduced repeat escalations</li><li>CEO Award of Excellence, Dec 2023, for product quality and client success</li></ul></div>
+<div class="job old"><h3>Junior Support Engineer</h3><div class="m">Maxwell GeoSystems · Apr 2022 → Jun 2024</div>
+<ul><li>Supported international enterprise clients across multi-channel systems: tickets, email and live sessions</li></ul></div>
+</div>
+<div class="card" style="margin-top:.5rem"><h3>Education</h3><p>Master of Computer Applications (MCA)</p></div>
+</div></section>
+
+<section id="projects"><div class="wrap rv">
+<div class="lab">// 04 projects</div><h2>Things I&rsquo;ve built</h2>
+<div class="grid">
+<div class="card proj wide"><span class="st">● ACTIVE</span><h3 style="margin:0">E-Turf — football ground booking platform</h3><p>Full-stack booking platform: ground listings, slot availability, authentication and booking management.</p><div class="pills"><span>Python</span><span>Django</span><span>MySQL</span><span>JavaScript</span></div><a class="st" href="https://github.com/sarinmr" target="_blank" rel="noopener">view source →</a></div>
+</div></div></section>
+
+<section id="contact"><div class="wrap rv"><div class="cta">
+<div class="lab">// 05 contact</div><h2>Let&rsquo;s talk</h2>
+<p>Open to conversations about engineering, product support and backend roles.</p>
+<div class="btns" style="justify-content:center"><a class="btn p" href="mailto:2mailsarin@gmail.com">send email →</a><a class="btn" href="https://www.linkedin.com/in/sarin-ramachandran-5b7431267/" target="_blank" rel="noopener">linkedin</a><a class="btn" href="https://github.com/sarinmr" target="_blank" rel="noopener">github</a></div>
+</div></div></section>
+<footer>© <span id="y"></span> Sarin M R · Kochi, India · built by hand</footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var mb=document.getElementById('mb'),ln=document.getElementById('ln');
+mb.onclick=function(){ln.classList.toggle('open')};
+ln.onclick=function(){ln.classList.remove('open')};
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('on')})},{threshold:.08});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+/* terminal */
+var lines=[
+['<span class="c">$</span> <span class="w">whoami</span>'],
+['sarin-mr · software engineer, product support'],
+['<span class="c">$</span> <span class="w">cat stack.txt</span>'],
+['<span class="v">python</span> <span class="v">php</span> <span class="v">django</span> <span class="v">sql</span> <span class="v">aws</span> <span class="v">linux</span>'],
+['<span class="c">$</span> <span class="w">status --incidents</span>'],
+['serving <span class="c">UK · EU · MEA</span> clients, 24h-ish coverage'],
+['<span class="c">$</span> <span class="w">uptime</span>'],
+['4+ yrs in production, all systems <span class="c">nominal</span><span class="cur"></span>']];
+var tp=document.getElementById('tp');
+if(rm){tp.innerHTML=lines.map(function(l){return l[0]}).join('\n')}
+else{var i=0,out='';(function step(){if(i>=lines.length)return;out+=(i?'\n':'')+lines[i][0];tp.innerHTML=out;i++;setTimeout(step,i%2?450:700)})()}
+/* network canvas */
+var cv=document.getElementById('net'),cx=cv.getContext('2d'),W,H,pts=[],mx=-999,my=-999;
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;var n=Math.min(70,Math.floor(W*H/22000));pts=[];for(var k=0;k<n;k++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25})}
+rs();addEventListener('resize',rs);
+addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
+function draw(){cx.clearRect(0,0,W,H);
+for(var a=0;a<pts.length;a++){var p=pts[a];if(!rm){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
+cx.fillStyle='rgba(0,240,208,.7)';cx.fillRect(p.x,p.y,2,2);
+for(var b=a+1;b<pts.length;b++){var q=pts[b],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<130){cx.strokeStyle='rgba(120,160,255,'+(.16*(1-d/130))+')';cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}
+var dm=Math.hypot(p.x-mx,p.y-my);if(dm<170){cx.strokeStyle='rgba(0,240,208,'+(.35*(1-dm/170))+')';cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(mx,my);cx.stroke()}}
+if(!rm)requestAnimationFrame(draw)}
+draw();
+</script>
+</body>
+</html>
